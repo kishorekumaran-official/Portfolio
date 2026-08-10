@@ -1,5 +1,6 @@
 /* ==========================================================================
    KISHORE KUMARAN — PORTFOLIO INTERACTIVITY SCRIPT
+   Voice Engine: Deep, Bold, Mature Professional Male Speech Synthesis
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 6. Speech & Voice Player Controls
+  // 6. Deep, Bold & Professional Male Speech Engine
   const btnReplays = document.querySelectorAll('.btnReplayIntro');
   const btnMutes = document.querySelectorAll('.btnMuteIntro');
   const aiAvatarCards = document.querySelectorAll('.ai-avatar-card');
@@ -99,22 +100,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isMuted = false;
   let isSpeaking = false;
+  let availableVoices = [];
 
   const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
 
+  // Pre-fetch & populate system voices
+  function loadVoices() {
+    if (!('speechSynthesis' in window)) return;
+    availableVoices = window.speechSynthesis.getVoices();
+  }
+
+  loadVoices();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function getBestMaleVoice() {
+    if (!availableVoices || availableVoices.length === 0) {
+      loadVoices();
+    }
+
+    // Priority list for deep, authoritative male voices
+    const preferredMaleKeywords = [
+      'David', 'Mark', 'George', 'James', 'Google US English Male', 
+      'Google UK English Male', 'Daniel', 'Alex', 'Rishi', 'Male', 'Natural'
+    ];
+
+    for (const keyword of preferredMaleKeywords) {
+      const match = availableVoices.find(v => 
+        v.name.includes(keyword) || (v.lang.startsWith('en') && v.name.toLowerCase().includes('male'))
+      );
+      if (match) return match;
+    }
+
+    // Fallback to any English voice
+    return availableVoices.find(v => v.lang.startsWith('en')) || null;
+  }
+
   function speakIntro() {
     if (!('speechSynthesis' in window)) return;
-    
+
     window.speechSynthesis.cancel();
 
     if (isMuted) return;
 
     const utterance = new SpeechSynthesisUtterance(introSpeechText);
-    utterance.rate = 1.0;
-    utterance.pitch = 0.95;
+    
+    // BOLD & FLUENT MALE VOICE TIMBRE
+    utterance.rate = 0.92;   // Natural, fluent professional pace
+    utterance.pitch = 0.80;  // Deep, masculine, authoritative pitch
 
-    const voices = window.speechSynthesis.getVoices();
-    const maleVoice = voices.find(v => (v.name.includes('Male') || v.name.includes('David') || v.name.includes('Google UK English Male')) && v.lang.startsWith('en'));
+    const maleVoice = getBestMaleVoice();
     if (maleVoice) {
       utterance.voice = maleVoice;
     }
