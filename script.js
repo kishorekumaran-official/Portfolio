@@ -1,6 +1,6 @@
 /* ==========================================================================
    KISHORE KUMARAN — PORTFOLIO INTERACTIVITY SCRIPT
-   Voice Engine: Ultra-Deep, Bold, Professional Male Speech Synthesis
+   Dual Audio Engine: Deep Male Audio & Web Speech Synthesis
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,103 +92,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 6. Bold & Deep Male Voice Synthesis Engine
+  // 6. Deep, Bold & Fluent Male Voice Audio Engine (Phone & Desktop Guaranteed)
   const btnReplays = document.querySelectorAll('.btnReplayIntro');
   const btnMutes = document.querySelectorAll('.btnMuteIntro');
   const aiAvatarCards = document.querySelectorAll('.ai-avatar-card');
   const muteTexts = document.querySelectorAll('.avatarMuteText');
 
   let isMuted = false;
-  let isSpeaking = false;
-  let availableVoices = [];
+  let isPlayingAudio = false;
 
-  const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
+  // Custom Audio Engine with 0.85x pitch shift for deep masculine voice on phone & desktop
+  const introAudio = new Audio('assets/audio/intro.mp3');
+  introAudio.playbackRate = 0.85; // DEEP BOLD MALE PITCH & FLUENT PACING
 
-  function populateVoices() {
-    if ('speechSynthesis' in window) {
-      availableVoices = window.speechSynthesis.getVoices();
-    }
-  }
+  introAudio.addEventListener('play', () => {
+    isPlayingAudio = true;
+    aiAvatarCards.forEach(c => c.classList.add('playing'));
+  });
 
-  populateVoices();
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.onvoiceschanged = populateVoices;
-  }
+  introAudio.addEventListener('ended', () => {
+    isPlayingAudio = false;
+    aiAvatarCards.forEach(c => c.classList.remove('playing'));
+  });
 
-  function getDeepMaleVoice() {
-    if (!availableVoices || availableVoices.length === 0) {
-      populateVoices();
-    }
+  introAudio.addEventListener('pause', () => {
+    isPlayingAudio = false;
+    aiAvatarCards.forEach(c => c.classList.remove('playing'));
+  });
 
-    // Explicit order: Microsoft David (Windows Deepest Male), Mark, George, Google Male, Daniel, Alex
-    const maleVoiceNames = [
-      'Microsoft David Desktop - English (United States)',
-      'Microsoft David - English (United States)',
-      'Microsoft Mark Desktop - English (United States)',
-      'Microsoft Mark - English (United States)',
-      'Microsoft George - English (United Kingdom)',
-      'Google UK English Male',
-      'Google US English Male',
-      'Daniel',
-      'Alex',
-      'Rishi'
-    ];
+  introAudio.addEventListener('error', () => {
+    // Fallback to SpeechSynthesis if audio file fails
+    fallbackSpeechIntro();
+  });
 
-    for (const name of maleVoiceNames) {
-      const match = availableVoices.find(v => v.name.includes(name) || v.name === name);
-      if (match) return match;
-    }
-
-    // Search for any voice with "Male", "David", "Mark", "George", or "Guy" in name
-    const genericMale = availableVoices.find(v => 
-      /david|mark|george|james|male|guy|daniel|alex/i.test(v.name)
-    );
-    if (genericMale) return genericMale;
-
-    // Fallback to any English voice
-    return availableVoices.find(v => v.lang.startsWith('en')) || null;
-  }
-
-  function speakIntro() {
-    if (!('speechSynthesis' in window)) return;
-
-    window.speechSynthesis.cancel();
-
+  function playIntroVoice() {
     if (isMuted) return;
 
-    const utterance = new SpeechSynthesisUtterance(introSpeechText);
-    
-    // DEEP MALE VOICE SPEECH SETTINGS
-    utterance.rate = 0.88;   // Deliberate, fluent, confident pace
-    utterance.pitch = 0.65;  // Deep, masculine tone (0.65 forces deep male timbre on all engines)
-    utterance.volume = 1.0;
-
-    const maleVoice = getDeepMaleVoice();
-    if (maleVoice) {
-      utterance.voice = maleVoice;
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
     }
 
-    utterance.onstart = () => {
-      isSpeaking = true;
-      aiAvatarCards.forEach(c => c.classList.add('playing'));
-    };
+    introAudio.currentTime = 0;
+    introAudio.playbackRate = 0.85;
+    introAudio.play().catch(() => {
+      fallbackSpeechIntro();
+    });
+  }
 
-    utterance.onend = () => {
-      isSpeaking = false;
-      aiAvatarCards.forEach(c => c.classList.remove('playing'));
-    };
+  function fallbackSpeechIntro() {
+    if (!('speechSynthesis' in window) || isMuted) return;
 
-    utterance.onerror = () => {
-      isSpeaking = false;
-      aiAvatarCards.forEach(c => c.classList.remove('playing'));
-    };
+    const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
+    const utterance = new SpeechSynthesisUtterance(introSpeechText);
+    utterance.rate = 0.88;
+    utterance.pitch = 0.65;
+
+    const voices = window.speechSynthesis.getVoices();
+    const maleVoice = voices.find(v => 
+      /david|mark|george|james|male|guy|daniel|alex/i.test(v.name)
+    );
+    if (maleVoice) utterance.voice = maleVoice;
+
+    utterance.onstart = () => aiAvatarCards.forEach(c => c.classList.add('playing'));
+    utterance.onend = () => aiAvatarCards.forEach(c => c.classList.remove('playing'));
+    utterance.onerror = () => aiAvatarCards.forEach(c => c.classList.remove('playing'));
 
     window.speechSynthesis.speak(utterance);
   }
 
   btnReplays.forEach(btn => {
     btn.addEventListener('click', () => {
-      speakIntro();
+      playIntroVoice();
     });
   });
 
@@ -196,12 +170,13 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       isMuted = !isMuted;
       if (isMuted) {
-        window.speechSynthesis.cancel();
+        introAudio.pause();
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
         aiAvatarCards.forEach(c => c.classList.remove('playing'));
         muteTexts.forEach(t => t.textContent = 'Unmute');
       } else {
         muteTexts.forEach(t => t.textContent = 'Mute');
-        speakIntro();
+        playIntroVoice();
       }
     });
   });
@@ -210,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const triggerAutoSpeech = () => {
     if (!autoSpoken) {
       autoSpoken = true;
-      speakIntro();
+      playIntroVoice();
       window.removeEventListener('click', triggerAutoSpeech);
     }
   };
