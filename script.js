@@ -1,6 +1,6 @@
 /* ==========================================================================
    KISHORE KUMARAN — PORTFOLIO INTERACTIVITY SCRIPT
-   Voice Engine: Bold, Fluent, Natural Speed Male Speech Engine
+   Voice Engine: Authentic Microsoft David Deep Male Audio Engine
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 6. Natural Speed, Bold & Fluent Male Voice Audio Engine
+  // 6. Authentic Microsoft David Deep Male Audio Engine (Laptop & Phone Guaranteed)
   const btnReplays = document.querySelectorAll('.btnReplayIntro');
   const btnMutes = document.querySelectorAll('.btnMuteIntro');
   const aiAvatarCards = document.querySelectorAll('.ai-avatar-card');
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let isMuted = false;
   let isPlayingAudio = false;
 
-  // Custom Audio Engine with 1.0x natural fluent speech speed
-  const introAudio = new Audio('assets/audio/intro.mp3');
-  introAudio.playbackRate = 1.0; // NORMAL NATURAL FLUENT PACING
+  // Authentic Microsoft David Deep Male Audio File
+  const introAudio = new Audio('assets/audio/intro.wav');
+  introAudio.playbackRate = 1.0;
 
   introAudio.addEventListener('play', () => {
     isPlayingAudio = true;
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     introAudio.currentTime = 0;
-    introAudio.playbackRate = 1.0; // NORMAL FLUENT SPEED
+    introAudio.playbackRate = 1.0;
     introAudio.play().catch(() => {
       fallbackSpeechIntro();
     });
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
     const utterance = new SpeechSynthesisUtterance(introSpeechText);
-    utterance.rate = 1.0;  // NORMAL FLUENT SPEED
-    utterance.pitch = 0.85; // MASCULINE DEEP TONE
+    utterance.rate = 0.95;
+    utterance.pitch = 0.8;
 
     const voices = window.speechSynthesis.getVoices();
     const maleVoice = voices.find(v => 
