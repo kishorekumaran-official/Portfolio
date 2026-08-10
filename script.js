@@ -1,6 +1,6 @@
 /* ==========================================================================
    KISHORE KUMARAN — PORTFOLIO INTERACTIVITY SCRIPT
-   Dual Audio Engine: Deep Male Audio & Web Speech Synthesis
+   Voice Engine: Bold, Fluent, Natural Speed Male Speech Engine
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 6. Deep, Bold & Fluent Male Voice Audio Engine (Phone & Desktop Guaranteed)
+  // 6. Natural Speed, Bold & Fluent Male Voice Audio Engine
   const btnReplays = document.querySelectorAll('.btnReplayIntro');
   const btnMutes = document.querySelectorAll('.btnMuteIntro');
   const aiAvatarCards = document.querySelectorAll('.ai-avatar-card');
@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let isMuted = false;
   let isPlayingAudio = false;
 
-  // Custom Audio Engine with 0.85x pitch shift for deep masculine voice on phone & desktop
+  // Custom Audio Engine with 1.0x natural fluent speech speed
   const introAudio = new Audio('assets/audio/intro.mp3');
-  introAudio.playbackRate = 0.85; // DEEP BOLD MALE PITCH & FLUENT PACING
+  introAudio.playbackRate = 1.0; // NORMAL NATURAL FLUENT PACING
 
   introAudio.addEventListener('play', () => {
     isPlayingAudio = true;
@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   introAudio.addEventListener('error', () => {
-    // Fallback to SpeechSynthesis if audio file fails
     fallbackSpeechIntro();
   });
 
@@ -133,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     introAudio.currentTime = 0;
-    introAudio.playbackRate = 0.85;
+    introAudio.playbackRate = 1.0; // NORMAL FLUENT SPEED
     introAudio.play().catch(() => {
       fallbackSpeechIntro();
     });
@@ -144,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
     const utterance = new SpeechSynthesisUtterance(introSpeechText);
-    utterance.rate = 0.88;
-    utterance.pitch = 0.65;
+    utterance.rate = 1.0;  // NORMAL FLUENT SPEED
+    utterance.pitch = 0.85; // MASCULINE DEEP TONE
 
     const voices = window.speechSynthesis.getVoices();
     const maleVoice = voices.find(v => 
