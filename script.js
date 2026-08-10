@@ -1,6 +1,6 @@
 /* ==========================================================================
    KISHORE KUMARAN — PORTFOLIO INTERACTIVITY SCRIPT
-   Voice Engine: Deep, Bold, Mature Professional Male Speech Synthesis
+   Voice Engine: Ultra-Deep, Bold, Professional Male Speech Synthesis
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 6. Deep, Bold & Professional Male Speech Engine
+  // 6. Bold & Deep Male Voice Synthesis Engine
   const btnReplays = document.querySelectorAll('.btnReplayIntro');
   const btnMutes = document.querySelectorAll('.btnMuteIntro');
   const aiAvatarCards = document.querySelectorAll('.ai-avatar-card');
@@ -104,34 +104,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const introSpeechText = "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences.";
 
-  // Pre-fetch & populate system voices
-  function loadVoices() {
-    if (!('speechSynthesis' in window)) return;
-    availableVoices = window.speechSynthesis.getVoices();
+  function populateVoices() {
+    if ('speechSynthesis' in window) {
+      availableVoices = window.speechSynthesis.getVoices();
+    }
   }
 
-  loadVoices();
+  populateVoices();
   if ('speechSynthesis' in window) {
-    window.speechSynthesis.onvoiceschanged = loadVoices;
+    window.speechSynthesis.onvoiceschanged = populateVoices;
   }
 
-  function getBestMaleVoice() {
+  function getDeepMaleVoice() {
     if (!availableVoices || availableVoices.length === 0) {
-      loadVoices();
+      populateVoices();
     }
 
-    // Priority list for deep, authoritative male voices
-    const preferredMaleKeywords = [
-      'David', 'Mark', 'George', 'James', 'Google US English Male', 
-      'Google UK English Male', 'Daniel', 'Alex', 'Rishi', 'Male', 'Natural'
+    // Explicit order: Microsoft David (Windows Deepest Male), Mark, George, Google Male, Daniel, Alex
+    const maleVoiceNames = [
+      'Microsoft David Desktop - English (United States)',
+      'Microsoft David - English (United States)',
+      'Microsoft Mark Desktop - English (United States)',
+      'Microsoft Mark - English (United States)',
+      'Microsoft George - English (United Kingdom)',
+      'Google UK English Male',
+      'Google US English Male',
+      'Daniel',
+      'Alex',
+      'Rishi'
     ];
 
-    for (const keyword of preferredMaleKeywords) {
-      const match = availableVoices.find(v => 
-        v.name.includes(keyword) || (v.lang.startsWith('en') && v.name.toLowerCase().includes('male'))
-      );
+    for (const name of maleVoiceNames) {
+      const match = availableVoices.find(v => v.name.includes(name) || v.name === name);
       if (match) return match;
     }
+
+    // Search for any voice with "Male", "David", "Mark", "George", or "Guy" in name
+    const genericMale = availableVoices.find(v => 
+      /david|mark|george|james|male|guy|daniel|alex/i.test(v.name)
+    );
+    if (genericMale) return genericMale;
 
     // Fallback to any English voice
     return availableVoices.find(v => v.lang.startsWith('en')) || null;
@@ -146,11 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const utterance = new SpeechSynthesisUtterance(introSpeechText);
     
-    // BOLD & FLUENT MALE VOICE TIMBRE
-    utterance.rate = 0.92;   // Natural, fluent professional pace
-    utterance.pitch = 0.80;  // Deep, masculine, authoritative pitch
+    // DEEP MALE VOICE SPEECH SETTINGS
+    utterance.rate = 0.88;   // Deliberate, fluent, confident pace
+    utterance.pitch = 0.65;  // Deep, masculine tone (0.65 forces deep male timbre on all engines)
+    utterance.volume = 1.0;
 
-    const maleVoice = getBestMaleVoice();
+    const maleVoice = getDeepMaleVoice();
     if (maleVoice) {
       utterance.voice = maleVoice;
     }
