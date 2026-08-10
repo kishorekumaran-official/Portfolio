@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kishore Kumaran | AI Website Developer & Real Estate Specialist</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Kishore Kumaran | AI Website Developer & Real Estate Specialist">
+  <meta name="description" content="Kishore Kumaran — AI Website Developer building modern, responsive, real estate and business-focused digital experiences. Founder of ZYRONIX.STUDIO.">
+  <meta name="keywords" content="Kishore Kumaran, AI Website Developer, Real Estate Website Specialist, ZYRONIX.STUDIO, Web Development, Responsive Web Design, AI Workflows">
+  <meta name="author" content="Kishore Kumaran">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kishorekumaran.dev">
+  <meta property="og:title" content="Kishore Kumaran | AI Website Developer">
+  <meta property="og:description" content="Kishore Kumaran — AI Website Developer building modern, responsive and AI-powered digital experiences for businesses.">
+  <meta property="og:image" content="assets/images/kishore_real.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Kishore Kumaran | AI Website Developer">
+  <meta property="twitter:description" content="Kishore Kumaran — AI Website Developer building modern, responsive and AI-powered digital experiences for businesses.">
+  <meta property="twitter:image" content="assets/images/kishore_real.jpg">
+
+  <!-- Favicon / Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Cursor Follower Ambient Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <span class="brand-highlight">ZYRONIX</span>.STUDIO
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="https://wa.me/917358751241?text=Hi%20Kishore%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." 
+           target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm nav-whatsapp-desktop">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div class="drawer-header">
+        <a href="#" class="brand-logo">
+          <span class="brand-highlight">ZYRONIX</span>.STUDIO
+        </a>
+        <button class="drawer-close" id="drawerClose" aria-label="Close Navigation Menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul class="drawer-links">
+        <li><a href="#work" class="drawer-link">Work</a></li>
+        <li><a href="#capabilities" class="drawer-link">Capabilities</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="https://wa.me/917358751241?text=Hi%20Kishore%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." 
+         target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+        <i class="fab fa-whatsapp"></i> WhatsApp Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text & Content (Left Column on Laptop) -->
+        <div class="hero-content">
+          <div class="badge">
+            <span class="badge-dot"></span> Founder — ZYRONIX.STUDIO
+          </div>
+
+          <h1 class="hero-title">
+            Kishore Kumaran
+          </h1>
+
+          <p class="hero-subtitle">
+            <span class="text-thunder" style="font-weight: 600;">AI Website Developer</span> — Building modern, AI-powered digital experiences & real estate platforms for businesses.
+          </p>
+
+          <!-- MOBILE ONLY PHOTO CARD (Keeps Phone View 100% Pakka) -->
+          <div class="ai-avatar-card mobile-only-avatar">
+            <div class="avatar-image-container">
+              <img src="assets/images/kishore_real.jpg" alt="Kishore Kumaran — AI Website Developer" class="avatar-image">
+              <div class="avatar-overlay-badge">
+                <i class="fas fa-check-circle" style="color: var(--cyan-accent);"></i> Kishore Kumaran
+              </div>
+              <div class="avatar-audio-wave">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+              </div>
+            </div>
+
+            <div class="avatar-info-panel">
+              <p class="avatar-quote">
+                "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences."
+              </p>
+              <div class="avatar-controls">
+                <button class="avatar-btn btnReplayIntro">
+                  <i class="fas fa-redo"></i> Replay Intro
+                </button>
+                <button class="avatar-btn btnMuteIntro">
+                  <i class="fas fa-volume-up"></i> <span class="avatarMuteText">Mute</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-capability">
+            <span>Web Development</span>
+            <span>•</span>
+            <span>AI-Assisted Development</span>
+            <span>•</span>
+            <span>Real Estate Specialist</span>
+            <span>•</span>
+            <span>Business Websites</span>
+          </div>
+
+          <!-- Social Handles Badges -->
+          <div class="social-chips-wrap">
+            <a href="https://instagram.com/zyronix.studio" target="_blank" rel="noopener noreferrer" class="meta-chip" style="color: var(--cyan-accent); text-decoration: none;">
+              <i class="fab fa-instagram"></i> @zyronix.studio
+            </a>
+            <a href="https://instagram.com/itsme____kishore__" target="_blank" rel="noopener noreferrer" class="meta-chip" style="color: var(--cyan-accent); text-decoration: none;">
+              <i class="fab fa-instagram"></i> @itsme____kishore__
+            </a>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">
+              View My Work <i class="fas fa-arrow-down"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Contact Me <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- LAPTOP/DESKTOP RIGHT COLUMN PHOTO CARD (Fills Laptop Right Empty Space) -->
+        <div class="ai-avatar-card desktop-only-avatar">
+          <div class="avatar-image-container">
+            <img src="assets/images/kishore_real.jpg" alt="Kishore Kumaran — AI Website Developer" class="avatar-image">
+            <div class="avatar-overlay-badge">
+              <i class="fas fa-check-circle" style="color: var(--cyan-accent);"></i> Kishore Kumaran
+            </div>
+            <div class="avatar-audio-wave">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+          </div>
+
+          <div class="avatar-info-panel">
+            <p class="avatar-quote">
+              "Hi, I'm Kishore Kumaran. I help businesses build AI-powered websites and modern digital experiences."
+            </p>
+            <div class="avatar-controls">
+              <button class="avatar-btn btnReplayIntro">
+                <i class="fas fa-redo"></i> Replay Intro
+              </button>
+              <button class="avatar-btn btnMuteIntro">
+                <i class="fas fa-volume-up"></i> <span class="avatarMuteText">Mute</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Proof Strip -->
+  <div class="proof-strip">
+    <div class="container proof-container">
+      <div class="proof-item">
+        <span class="proof-dot"></span> REAL PROJECTS
+      </div>
+      <div class="proof-item">
+        <span class="proof-dot"></span> REAL ESTATE SPECIALIST
+      </div>
+      <div class="proof-item">
+        <span class="proof-dot"></span> AI-ASSISTED DEVELOPMENT
+      </div>
+      <div class="proof-item">
+        <span class="proof-dot"></span> DEPLOYED WEBSITES
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Work Section -->
+  <section class="work-section reveal" id="work">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-subtitle">Real websites I've designed, developed, and deployed across real estate, corporate business, and AI platforms.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Projects</button>
+        <button class="filter-tab" data-filter="realestate">Real Estate</button>
+        <button class="filter-tab" data-filter="business">Business Websites</button>
+        <button class="filter-tab" data-filter="landing">Landing Pages</button>
+        <button class="filter-tab" data-filter="portfolio">Portfolio</button>
+        <button class="filter-tab" data-filter="fitness">Fitness</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+
+        <!-- Real Estate Project 1: Skyline Heights -->
+        <article class="project-card reveal" data-category="realestate business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://luxury-real-estate-w-d40g.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/skyline_heights.png" alt="Skyline Heights Luxury Apartment Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Real Estate / Luxury Apartment</span>
+            <h3 class="project-name">Skyline Heights</h3>
+            <p class="project-desc">
+              Designed to showcase premium residential apartments with an elegant user experience and high-converting enquiry flow.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Luxury Apartment UI</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Lead Enquiry Flow</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Conversion-Focused</span>
+            </div>
+            <a href="https://luxury-real-estate-w-d40g.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Real Estate Project 2: Skyline Developers -->
+        <article class="project-card reverse reveal" data-category="realestate business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://skyline-developers-l-bdhe.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/skyline_developers.png" alt="Skyline Developers Corporate Real Estate Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Real Estate / Corporate</span>
+            <h3 class="project-name">Skyline Developers</h3>
+            <p class="project-desc">
+              A premium corporate website built to establish brand credibility, showcase projects, and generate high-quality property enquiries.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Corporate Credibility</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Property Showcase</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> High-Quality Enquiries</span>
+            </div>
+            <a href="https://skyline-developers-l-bdhe.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Real Estate Project 3: Skyline Properties -->
+        <article class="project-card reveal" data-category="realestate business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://skyline-properties-p-pifu.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/skyline_properties.png" alt="Skyline Properties AI Property Listing Platform" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Real Estate / AI Property Listing Platform</span>
+            <h3 class="project-name">Skyline Properties</h3>
+            <p class="project-desc">
+              Modern property listing platform with smart property browsing, interactive listings, and AI-inspired user experience.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Smart Property Search</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Interactive Listings</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> AI Property Platform</span>
+            </div>
+            <a href="https://skyline-properties-p-pifu.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Real Estate Project 4: Arjun Kumar -->
+        <article class="project-card reverse reveal" data-category="realestate portfolio">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://luxury-real-estate-a-pp25.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/arjun_kumar.png" alt="Arjun Kumar Real Estate Agent Branding" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Real Estate Agent / Personal Branding</span>
+            <h3 class="project-name">Arjun Kumar — Real Estate Agent</h3>
+            <p class="project-desc">
+              Personal branding website designed to build trust, showcase expertise, and increase consultation bookings for real estate professionals.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Personal Branding</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Consultation Booking</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Trust Architecture</span>
+            </div>
+            <a href="https://luxury-real-estate-a-pp25.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Real Estate Project 5: Skyline Grand Villas -->
+        <article class="project-card reveal" data-category="realestate business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://luxury-real-estate-p-oqpz.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/skyline_villas.png" alt="Skyline Grand Villas Luxury Villa Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Real Estate / Luxury Villa</span>
+            <h3 class="project-name">Skyline Grand Villas</h3>
+            <p class="project-desc">
+              Luxury villa project website featuring premium visuals, elegant layouts, and conversion-focused enquiry sections.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Luxury Villa Showcase</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Premium Visuals</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Lead Capture</span>
+            </div>
+            <a href="https://luxury-real-estate-p-oqpz.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Titan Fitness -->
+        <article class="project-card reverse reveal" data-category="fitness business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://titan-strength-canvas.lovable.app</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/titan_fitness.png" alt="Titan Fitness Deployed Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Fitness / Business Website</span>
+            <h3 class="project-name">Titan Fitness</h3>
+            <p class="project-desc">
+              A premium fitness center website focused on presenting the brand, services and membership experience through a modern digital interface.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Dynamic Layout</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Membership Programs</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> High-Impact Visuals</span>
+            </div>
+            <a href="https://titan-strength-canvas.lovable.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Steven Elevators -->
+        <article class="project-card reveal" data-category="business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://steven-elevators-web-s3qn.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/steven_elevators.png" alt="Steven Elevators Corporate Deployed Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Corporate Business Website</span>
+            <h3 class="project-name">Steven Elevators</h3>
+            <p class="project-desc">
+              A professional website created for an elevator solutions business, focused on presenting the company and its services with a clean corporate interface.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Corporate Design</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Industrial Solutions</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Service Matrix</span>
+            </div>
+            <a href="https://steven-elevators-web-s3qn.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Kishorekumaran P — Previous Portfolio -->
+        <article class="project-card reverse reveal" data-category="portfolio">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://kishorekumaran-p-lux-vw06.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/previous_portfolio.png" alt="Kishorekumaran P Previous Portfolio" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="project-tag">Personal Portfolio</span>
+              <span class="meta-chip" style="background: rgba(0, 102, 255, 0.2); color: var(--cyan-accent); font-weight: 700;">EARLIER VERSION</span>
+            </div>
+            <h3 class="project-name">Kishorekumaran P — Previous Portfolio</h3>
+            <p class="project-desc">
+              An earlier AI Website Developer portfolio exploring a premium personal-brand presentation and AI-assisted website experience.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-archive"></i> Legacy Build</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Brand Iteration</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Interactive UI</span>
+            </div>
+            <a href="https://kishorekumaran-p-lux-vw06.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Steven Elevators — Landing Page -->
+        <article class="project-card reveal" data-category="landing">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://ai-saas-landing-page-91xu.bolt.host</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/steven_landing.png" alt="Steven Elevators Landing Page" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Landing Page / Corporate</span>
+            <h3 class="project-name">Steven Elevators — Landing Page</h3>
+            <p class="project-desc">
+              A focused landing page concept for professional elevator solutions, designed around clear communication and conversion-focused presentation.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Conversion Optimization</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Lead Generation UI</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> High Performance</span>
+            </div>
+            <a href="https://ai-saas-landing-page-91xu.bolt.host" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Transport Management -->
+        <article class="project-card reverse reveal" data-category="business">
+          <div class="project-preview">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url-bar">https://transport-management-lime.vercel.app/</div>
+              </div>
+              <div class="browser-content">
+                <img src="assets/images/transport_management.png" alt="Transport Management Business Website" class="project-image" loading="lazy">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Business / Transport Management</span>
+            <h3 class="project-name">Transport Management</h3>
+            <p class="project-desc">
+              A responsive business website created for transport and construction-material related services.
+            </p>
+            <div class="project-meta">
+              <span class="meta-chip"><i class="fas fa-check"></i> Logistics Architecture</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Fleet Services Showcase</span>
+              <span class="meta-chip"><i class="fas fa-check"></i> Mobile Optimized</span>
+            </div>
+            <a href="https://transport-management-lime.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              View Live Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Capabilities Section -->
+  <section class="capabilities-section reveal" id="capabilities">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Capabilities</h2>
+        <p class="section-subtitle">Verified technical and development skills demonstrated across my live projects.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-building"></i></div>
+          <div class="skill-name">Real Estate Website Design</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-home"></i></div>
+          <div class="skill-name">Property Listing Platforms</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <div class="skill-name">HTML</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+          <div class="skill-name">CSS</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-js"></i></div>
+          <div class="skill-name">JavaScript</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fab fa-react"></i></div>
+          <div class="skill-name">React</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="skill-name">Responsive Web Design</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-robot"></i></div>
+          <div class="skill-name">AI-Assisted Development</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <div class="skill-name">Website Deployment</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-palette"></i></div>
+          <div class="skill-name">UI Design</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="skill-name">Business Website Development</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Development Workflow Section -->
+  <section class="workflow-section reveal" id="workflow">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How I Build</h2>
+        <p class="section-subtitle">A structured 4-step workflow combining AI acceleration with robust engineering principles.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card">
+          <div class="workflow-step">01</div>
+          <h3 class="workflow-title">Understand</h3>
+          <p class="workflow-desc">Business requirements and user goals</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="workflow-step">02</div>
+          <h3 class="workflow-title">Design</h3>
+          <p class="workflow-desc">Structure, UI and user experience</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="workflow-step">03</div>
+          <h3 class="workflow-title">Build</h3>
+          <p class="workflow-desc">AI-assisted development and implementation</p>
+        </div>
+
+        <div class="workflow-card">
+          <div class="workflow-step">04</div>
+          <h3 class="workflow-title">Optimize</h3>
+          <p class="workflow-desc">Responsive testing, performance and deployment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Consider My Work Section -->
+  <section class="strengths-section reveal" id="why-consider">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why Consider My Work</h2>
+        <p class="section-subtitle">Practical strengths built around real execution and production delivery.</p>
+      </div>
+
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <div class="strength-header">
+            <span class="strength-bullet"></span>
+            <h3 class="strength-title">Business-focused</h3>
+          </div>
+          <p class="strength-desc">I build websites around real business requirements.</p>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-header">
+            <span class="strength-bullet"></span>
+            <h3 class="strength-title">Responsive</h3>
+          </div>
+          <p class="strength-desc">I focus on layouts that work across desktop and mobile.</p>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-header">
+            <span class="strength-bullet"></span>
+            <h3 class="strength-title">AI-assisted</h3>
+          </div>
+          <p class="strength-desc">I use AI tools to accelerate development and iteration.</p>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-header">
+            <span class="strength-bullet"></span>
+            <h3 class="strength-title">Deployment-ready</h3>
+          </div>
+          <p class="strength-desc">My projects are deployed and accessible through live URLs.</p>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-header">
+            <span class="strength-bullet"></span>
+            <h3 class="strength-title">Continuous improvement</h3>
+          </div>
+          <p class="strength-desc">I test, review and refine the final experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about-section reveal" id="about">
+    <div class="container">
+      <div class="about-card">
+        <h2 class="section-title" style="margin-bottom: 1.25rem;">About Me</h2>
+        <p class="about-text">
+          I'm Kishore Kumaran, an AI Website Developer focused on building modern, responsive, real estate and business-oriented digital experiences. I use AI-assisted development workflows to move from idea and structure to implementation, testing and deployment.
+        </p>
+
+        <!-- Instagram Handles in About Section -->
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1.5rem; justify-content: center;">
+          <a href="https://instagram.com/zyronix.studio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <i class="fab fa-instagram" style="color: #e1306c;"></i> @zyronix.studio
+          </a>
+          <a href="https://instagram.com/itsme____kishore__" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <i class="fab fa-instagram" style="color: #e1306c;"></i> @itsme____kishore__
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-section reveal" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Let's Build Something</h2>
+        <p class="section-subtitle">Interested in my work or want to discuss an opportunity?</p>
+        
+        <div class="contact-phone-badge">
+          <i class="fas fa-phone-alt" style="color: var(--cyan-accent); margin-right: 0.5rem;"></i> +91 7358751241
+        </div>
+
+        <div class="contact-actions">
+          <a href="https://wa.me/917358751241?text=Hi%20Kishore%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." 
+             target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Me
+          </a>
+          <a href="tel:+917358751241" class="btn btn-secondary">
+            <i class="fas fa-phone-alt"></i> Call Me
+          </a>
+          <a href="https://instagram.com/zyronix.studio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="fab fa-instagram" style="color: #e1306c;"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/917358751241?text=Hi%20Kishore%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." 
+     target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-badge"></span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        © 2026 Kishore Kumaran — AI Website Developer • ZYRONIX.STUDIO
+      </div>
+      <div style="display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <a href="https://instagram.com/zyronix.studio" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">
+          <i class="fab fa-instagram"></i> @zyronix.studio
+        </a>
+        <a href="https://instagram.com/itsme____kishore__" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;">
+          <i class="fab fa-instagram"></i> @itsme____kishore__
+        </a>
+        <a href="#hero" class="back-to-top">
+          Back to Top <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
